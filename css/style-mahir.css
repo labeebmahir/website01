@@ -1,0 +1,277 @@
+/* Reset Default Styles */
+body, ul, h1, p {
+	margin: 0;
+	padding: 0;
+}
+/* - end of Reset */
+/* --------------------------------------------------------------- */
+
+/* Set Global Styles */
+body{
+	background: #f4f4f4;
+	font-family: Arial, Helvetica,sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	color: #555;
+	margin: 0;
+	padding: 0;
+}
+p {font-size:16px;}
+h1 {font-size:19px;}
+a {text-decoration: none;}
+input {
+	border: 1px solid #fff;
+	padding: 5px;
+    font-size: 15px;
+    color: #555;
+}
+
+input:focus{
+	outline: none;
+}
+button{
+	padding: 7px;
+	border: 2px solid #2b77f3;
+	background: #2b77f3;
+	color: #fff;
+	cursor: pointer;
+}
+button:hover{
+	border: 2px solid #fab51e;
+	background: #fab51e;
+	transition: all 0.2s ease-in-out;
+}
+button:focus{
+	opacity: 0.5;
+	outline: none;
+}
+/* - end of Global Styles */
+/* --------------------------------------------------------------- */
+
+/*Header*/
+header {
+	background: #2b77f3;
+	color: #fff;
+	padding: 20px 0;
+	border-bottom: 5px solid #fab51e;
+}
+header .container {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header ul {list-style: none;}
+header li {
+	display: inline-block;
+	padding: 0 20px;
+}
+header a {
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+}
+header a:hover, header a:focus{
+	opacity: 0.5;
+	transition: all 0.3s ease-in-out;
+}
+header .container .branding {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header .container .branding #logo, header .container .branding #co-name {margin-bottom:15px;}
+/*ShowCase*/
+#showcase{
+	color: #fff;
+	background: url('../img/showcase.jpg') no-repeat 0 -400px;
+	
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	min-height:150px;
+}
+#showcase h1{font-size:22px;}
+
+/*Box*/
+#box{
+	padding:20px;
+}
+#box .container{
+	display: flex;
+	flex-direction: column;
+}
+
+#box .item{
+	border: 2px solid #fab51e;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+#box .item:last-child{margin-bottom:0;}
+#box .item h1{
+	padding: 0;
+	margin: 0;
+	color: #333;
+	margin-bottom: 5px;
+	font-size: 19px;
+}
+#box .item p{
+	line-height: 1.4em;
+	margin: 0;
+	font-size:16px;
+}
+
+/*SubQuo*/
+#subquo {padding:20px;}
+#subquo .container{
+	display: flex;
+	flex-direction: column;
+}
+#subquo .b3{
+	border: 2px solid #fab51e;
+	padding: 20px 0;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+	margin-bottom:20px
+}
+#subquo .b3 h1 {font-size:19px;}
+#subquo .b3 form {
+	width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#subquo .b3 button.btn-submit {margin-top:15px;}
+#subquo .b3.getquote form {
+	justify-content: left;
+    align-items: unset;
+}
+#subquo .col-3 {
+	display:flex;
+	flex-direction:column;
+	margin-bottom: 10px;
+}
+#subquo .b3 label{
+	margin-bottom:5px;
+}
+
+/*Footer*/
+footer{
+  padding: 5px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #2b77f3;
+  text-align: center;
+}
+footer p {margin:0;padding:10px;}
+
+/*
+https://getflywheel.com/layout/css-breakpoints-responsive-design-how-to/
+*/
+
+/* --------------------------- Mobile First Approach ---------------------------*/
+
+@media (min-width: 768px){
+/* apply styles space more than 768 - medium  screens */
+ 
+ header .container {
+	 flex-direction:row;
+	 justify-content: space-between;
+ }
+ 
+ header .container .branding {
+	flex-direction: row;
+    padding-left: 20px;
+ }
+ 
+  header .container .branding #co-name { 
+	padding-left:10px;
+  }
+  header .container .branding #logo, header .container .branding #co-name {margin-bottom:0;}
+  
+/* whatever value applied in MEDIUM get inherited in LARGE */  
+  h1 {color:red;}
+  
+  #showcase {
+    min-height: 250px;
+  }
+  #showcase h1 {
+    font-size: 32px;
+  }
+  
+  #box .container {
+	flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: space-between;
+	
+	align-items:baseline; /* Note this */
+  }
+  
+   #box .container .item {
+	  width:46%;
+  }
+  
+  #subquo .b3.subscribe {
+	  flex-direction:row;
+	  justify-content: space-around;
+	  /* Note */
+	  justify-content: center;
+  }
+  #subquo .b3.subscribe h1 {margin-right:20px;}
+  
+  #subquo .b3.subscribe form {
+    width: 50%;
+	flex-direction: row;
+	justify-content: center;
+    /* align-items: center */
+  } 
+  #subquo .b3.subscribe form input {
+	  width: 100%;
+  }
+  
+  #subquo .b3.subscribe form button.btn-submit {
+    margin-top: 0;
+  }
+  
+  
+  #subquo .b3.getquote {
+	  padding:20px;
+  }
+  #subquo .b3.getquote h1 {
+	  align-self: baseline;
+  }
+  #subquo .b3.getquote form {
+	  width:100%;
+  }
+  
+  #subquo .b3.getquote form .inner-wrapper {
+	  display: flex;
+	  justify-content: space-between;
+	  padding-top: 20px;
+  }
+  #subquo .b3.getquote form .inner-wrapper .col-3 {
+	  width:32%;
+  }
+   #subquo .b3.getquote form button.btn-submit {
+		align-self: center;
+		width: 32%;
+   }
+ 
+}
+
+@media (min-width: 1100px){
+/* apply styles space more than 1200 - larger  screens */
+	#box .container .item {
+		width: 21%;
+		margin-bottom:0;
+	}
+	#subquo .container {
+		flex-direction:row;
+		justify-content: space-between;
+	}
+	#subquo .container .b3 {padding:20px; width:45%;}
+	#subquo .b3 h1 {
+		font-size: 16px;
+	}
+}
